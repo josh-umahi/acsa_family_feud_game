@@ -33,30 +33,32 @@
   align-items: center;
 }
 
-.allAnswerDiv h3 {
-  font-family: "Comfortaa", "DIN Alternate", sans-serif;
-  font-weight: 700;
-  text-transform: uppercase;
-  font-size: 30px;
-  color: white;
-  text-align: center;
-}
-
 .answerBox:first-child {
   margin: 0 auto;
 }
 
 .answerBox {
+  font-family: "Comfortaa", "DIN Alternate", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 30px;
+  text-align: center;
   background-color: #2f5dbd;
   border: 3px solid #ffffff;
+  color: #ffffff;
   padding: 0.25em 1em;
   margin-top: 18px;
   margin-bottom: 0;
   width: 700px;
+  height: 60px;
 }
 
 .answerBox:hover {
   cursor: pointer;
+}
+
+.answerBox.hidden{
+  color: #000000;
 }
 
 .gameMenuDiv {

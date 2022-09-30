@@ -1,0 +1,83 @@
+.roundOfGameSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.questionTitleDiv {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 1em 2em;
+  margin: 20px 1em;
+  max-width: 900px;
+}
+
+.questionTitleDiv h3 {
+  font-family: "Comfortaa", "DIN Alternate", sans-serif;
+  font-weight: 700;
+  text-transform: capitalize;
+  font-size: 30px;
+  text-align: center;
+  line-height: 135%;
+  margin: 0;
+  padding: 0;
+}
+
+.allAnswerDiv {
+  background-color: rgba(0, 0, 0, 1);
+  margin: 20px 1em 60px;
+  padding: 1em;
+  width: 900px;
+  border: 8px solid #ffa317;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.allAnswerDiv h3 {
+  font-family: "Comfortaa", "DIN Alternate", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 30px;
+  color: white;
+  text-align: center;
+}
+
+.answerBox:first-child {
+  margin: 0 auto;
+}
+
+.answerBox {
+  background-color: #2f5dbd;
+  border: 3px solid #ffffff;
+  padding: 0.25em 1em;
+  margin-top: 18px;
+  margin-bottom: 0;
+  width: 700px;
+}
+
+.answerBox:hover {
+  cursor: pointer;
+}
+
+.gameMenuDiv {
+  background-color: rgba(255, 255, 255, 0.6);
+  padding: 1.25em 2em;
+}
+
+.gameButton {
+  font-size: 16px;
+  color: #ffffff;
+  border-radius: 13px;
+  padding: 1em 2em;
+  margin-left: 1em;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+.gameButton:first-child {
+  margin-left: 0;
+}
+
+.gameButton:hover {
+  box-shadow: none;
+}

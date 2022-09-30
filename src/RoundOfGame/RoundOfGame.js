@@ -1,18 +1,51 @@
 import React, { useState } from 'react'
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
-import './style.css';
+import './roundOfGame.css';
 import database from "../database.js"
+import AnswerBox from './AnswerBox';
+import GameButton from './GameButton';
 
 const RoundOfGame = () => {
     const { id } = useParams();
     const [question_number] = useState(parseInt(id))
     const [question_index] = useState(parseInt(id) - 1)
     const [question_object] = useState(database[question_index])
+    const navigate = useNavigate()
+
+    const action_playXSound = () => {
+
+    }
+
+    const action_showAllAnswers = () => {
+
+    }
+
+    const action_newQuestion = () => {
+        navigate('/')
+    }
 
     return (
         // TODO: Never use this "&&" notation with a number value because 0 will make it evaluate to false even if that wasn't your intention.
-        question_object && <p>{question_object.Question_Title}</p>
+        question_object &&
+        <div className='roundOfGameSection'>
+            <div className='questionTitleDiv'>
+                <h3>{`${question_number}) ${question_object.Question_Title}`}</h3>
+            </div>
+            <div class="allAnswerDiv">
+                <AnswerBox answerID="A" answerValue={question_object.Answer_1} answerPoints={question_object.Answer_1_Points} />
+                <AnswerBox answerID="B" answerValue={question_object.Answer_2} answerPoints={question_object.Answer_2_Points} />
+                <AnswerBox answerID="C" answerValue={question_object.Answer_3} answerPoints={question_object.Answer_3_Points} />
+                <AnswerBox answerID="D" answerValue={question_object.Answer_4} answerPoints={question_object.Answer_4_Points} />
+                <AnswerBox answerID="E" answerValue={question_object.Answer_5} answerPoints={question_object.Answer_5_Points} />
+                <AnswerBox answerID="F" answerValue={question_object.Answer_6} answerPoints={question_object.Answer_6_Points} />
+            </div>
+            <div class="gameMenuDiv">
+                <GameButton title="Play “X” Sound" clickAction={action_playXSound} bgColor="#B3281E" />
+                <GameButton title="Show All Answers" clickAction={action_showAllAnswers} bgColor="#066F6A" />
+                <GameButton title="New Question" clickAction={action_newQuestion} bgColor="#000000" />
+            </div>
+        </div>
     )
 }
 

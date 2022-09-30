@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
 import { useNavigate } from "react-router-dom";
 
+import './home.css';
+import acsa_logo from "../assets/acsa_logo.png"
+
 const Home = () => {
     const [number_input_entered, set_number_input_entered] = useState(null)
     const navigate = useNavigate();
@@ -17,6 +20,7 @@ const Home = () => {
     return (
         <div className='homeSection'>
             <header>
+                <img className='acsaImg' src={acsa_logo} alt="logo" />
                 <h1 className='textLogo'>The ACSA Family Feud</h1>
                 <form className='input_div' onSubmit={(e) => {
                     e.preventDefault()

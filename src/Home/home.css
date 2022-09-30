@@ -1,21 +1,36 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Tourney:wght@600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@600;700&family=Lexend+Deca:wght@600;700&family=Space+Mono:wght@400;700&family=Tourney:wght@600;700&display=swap");
 
 body {
-  background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url(./assets/bg.jpg);
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url(../assets/bg.jpg);
+  /* background: linear-gradient( rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) ), url(./assets/bg.jpg); */
   background-size: cover;
 }
 
-.homeSection{
+button {
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  overflow: visible;
+  cursor: pointer;
+}
+
+.homeSection {
   background-color: #265ee0;
   padding: 3em 5em 1em;
   margin: 3em auto 1em;
 }
 
-.textLogo{
-  font-family: 'Tourney', cursive;
+.acsaImg {
+  height: 150px;
+}
+
+.textLogo {
+  font-family: "Tourney", cursive;
   font-weight: 600;
   font-size: 64px;
-  color: #FFB037;
+  color: #ffb037;
   margin-top: 0;
 }
 

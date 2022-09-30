@@ -81,3 +81,11 @@
 .gameButton:hover {
   box-shadow: none;
 }
+
+.xSymbol {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 400px;
+}

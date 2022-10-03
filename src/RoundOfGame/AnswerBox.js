@@ -2,11 +2,12 @@ import React from 'react'
 import correct_audio from "../assets/correct_audio.mp3"
 
 const AnswerBox = ({ answerID, answerValue, answerPoints, showAnswerValue, setShowAnswerValue }) => {
+    const correct_audio_element = new Audio(correct_audio)
 
     const handleClick = (e) => {
         e.preventDefault()
         if (!showAnswerValue) {
-            new Audio(correct_audio).play();
+            correct_audio_element.play();
         }
         setShowAnswerValue(!showAnswerValue)
     }

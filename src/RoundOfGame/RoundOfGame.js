@@ -22,6 +22,8 @@ const RoundOfGame = () => {
     const [showAnswer_D, set_showAnswer_D] = useState(false)
     const [showAnswer_E, set_showAnswer_E] = useState(false)
     const [showAnswer_F, set_showAnswer_F] = useState(false)
+    const wrong_audio_element = new Audio(wrong_audio)
+    const show_answers_audio_element = new Audio(show_answers_audio)
 
     useEffect(() => {
         document.addEventListener('keypress', (event) => {
@@ -34,7 +36,7 @@ const RoundOfGame = () => {
 
     const action_displayX = () => {
         if (!showX) {
-            new Audio(wrong_audio).play();
+            wrong_audio_element.play();
         }
 
         // * Decided to make it a toggle so that if the app hooks on 
@@ -47,7 +49,7 @@ const RoundOfGame = () => {
     }
 
     const action_showAllAnswers = () => {
-        new Audio(show_answers_audio).play();
+        show_answers_audio_element.play();
         set_showAnswer_A(true)
         set_showAnswer_B(true)
         set_showAnswer_C(true)

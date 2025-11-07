@@ -2,35 +2,46 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
+  width: 100vw;
+  height: 100vh;
 }
 
 .questionTitleDiv {
   background-color: rgba(255, 255, 255, 0.9);
-  padding: 1em 2em;
-  margin: 20px 1em;
-  max-width: 900px;
+  padding: 1em 0;
+  margin: 0;
+  width: 100%;
 }
 
 .questionTitleDiv h3 {
   font-family: "Comfortaa", "DIN Alternate", sans-serif;
   font-weight: 700;
   text-transform: capitalize;
-  font-size: 30px;
+  font-size: 24px;
   text-align: center;
-  line-height: 135%;
+  line-height: 145%;
   margin: 0;
-  padding: 0;
+  padding: 0 2em;
 }
 
 .allAnswerDiv {
   background-color: rgba(0, 0, 0, 1);
-  margin: 20px 1em 60px;
+  margin: 0 1em;
   padding: 1em;
   width: 900px;
   border: 8px solid #ffa317;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.pointsCalculator {
+  font-family: "Space Mono", Courier, monospace;
+  font-weight: 700;
+  font-size: 50px;
+  text-align: center;
+  color: #fff; /* readable on your light menu background */
 }
 
 .answerBox:first-child {
@@ -41,13 +52,13 @@
   font-family: "Comfortaa", "DIN Alternate", sans-serif;
   font-weight: 700;
   text-transform: uppercase;
-  font-size: 30px;
+  font-size: 24px;
   text-align: center;
   background-color: #2f5dbd;
   border: 3px solid #ffffff;
   color: #ffffff;
   padding: 0.25em 1em;
-  margin-top: 18px;
+  margin-top: 13px;
   margin-bottom: 0;
   width: 700px;
   height: 60px;
@@ -63,7 +74,7 @@
 
 .gameMenuDiv {
   background-color: rgba(255, 255, 255, 0.6);
-  padding: 1.25em 2em;
+  padding: 1em 2em;
 }
 
 .gameButton {
@@ -84,10 +95,32 @@
   box-shadow: none;
 }
 
-.xSymbol {
+/* New: container that centers the X group */
+.xSymbolsContainer {
   position: absolute;
-  top: 45%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  height: 400px;
+  display: flex;
+  gap: 0; /* since the X png already comes with some horizontal padding */
+  align-items: center;
+  justify-content: center;
+}
+
+.xSymbolsContainer .xSymbol {
+  position: static;      
+  height: 400px;         
+  width: auto;
+}
+
+.xCounterDisplay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.xCounterDisplay span {
+  font-size: 3rem;
+  font-weight:  'bold';
+  margin: 0 10px;
 }

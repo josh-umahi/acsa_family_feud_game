@@ -30,12 +30,12 @@ const Home = () => {
             <input onChange={e => set_number_input_entered(e.target.value)} type="text" placeholder='Enter a number' id="" />
             <button type="submit">submit</button>
           </div>
-          <p>Enter a number between 1 and 1000</p>
+          <p>Enter a number between 1 and 1,000</p>
         </form>
       </header>
+      {/* TODO: Make my name a hyperlink */}
       <footer>
-        <h4>Created by Yours Truly.</h4>
-        <h4>Yours Truly is me, Joshua Umahi.</h4>
+        <h4>Created by <a href="https://joshumahi.vercel.app/" target="_blank" rel="noopener">Joshua Umahi</a>.</h4>
       </footer>
     </div>
   )

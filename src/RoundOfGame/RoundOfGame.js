@@ -52,16 +52,15 @@ const RoundOfGame = () => {
   const wrong_audio_element = new Audio(wrong_audio);
   const show_answers_audio_element = new Audio(show_answers_audio);
   const [frozenTotal, setFrozenTotal] = useState(null);
+  const calculateVisiblePoints = () =>
+    (showAnswer_A ? Number(question_object.Answer_1_Points) : 0) +
+    (showAnswer_B ? Number(question_object.Answer_2_Points) : 0) +
+    (showAnswer_C ? Number(question_object.Answer_3_Points) : 0) +
+    (showAnswer_D ? Number(question_object.Answer_4_Points) : 0) +
+    (showAnswer_E ? Number(question_object.Answer_5_Points) : 0) +
+    (showAnswer_F ? Number(question_object.Answer_6_Points) : 0);
 
-  const totalPoints =
-    frozenTotal !== null
-      ? frozenTotal
-      : (showAnswer_A ? Number(question_object.Answer_1_Points) : 0) +
-        (showAnswer_B ? Number(question_object.Answer_2_Points) : 0) +
-        (showAnswer_C ? Number(question_object.Answer_3_Points) : 0) +
-        (showAnswer_D ? Number(question_object.Answer_4_Points) : 0) +
-        (showAnswer_E ? Number(question_object.Answer_5_Points) : 0) +
-        (showAnswer_F ? Number(question_object.Answer_6_Points) : 0);
+  const totalPoints = frozenTotal !== null ? frozenTotal : calculateVisiblePoints();
 
   useEffect(() => {
     const onKeyPress = (event) => {
@@ -76,6 +75,21 @@ const RoundOfGame = () => {
       document.removeEventListener('keypress', onKeyPress);
     };
   }, [id]);
+
+  useEffect(() => {
+    if (xCount === 3 && frozenTotal === null) {
+      setFrozenTotal(calculateVisiblePoints());
+    }
+  }, [
+    xCount,
+    frozenTotal,
+    showAnswer_A,
+    showAnswer_B,
+    showAnswer_C,
+    showAnswer_D,
+    showAnswer_E,
+    showAnswer_F,
+  ]);
 
   const action_displayX = () => {
     if (!showX) {
@@ -101,16 +115,7 @@ const RoundOfGame = () => {
   const action_showAllAnswers = () => {
     show_answers_audio_element.play();
 
-    setFrozenTotal((prev) =>
-      prev === null
-        ? (showAnswer_A ? Number(question_object.Answer_1_Points) : 0) +
-          (showAnswer_B ? Number(question_object.Answer_2_Points) : 0) +
-          (showAnswer_C ? Number(question_object.Answer_3_Points) : 0) +
-          (showAnswer_D ? Number(question_object.Answer_4_Points) : 0) +
-          (showAnswer_E ? Number(question_object.Answer_5_Points) : 0) +
-          (showAnswer_F ? Number(question_object.Answer_6_Points) : 0)
-        : prev,
-    );
+    setFrozenTotal((prev) => (prev === null ? calculateVisiblePoints() : prev));
 
     set_showAnswer_A(true);
     set_showAnswer_B(true);
